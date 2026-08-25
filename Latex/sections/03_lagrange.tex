@@ -1,0 +1,55 @@
+\section{Derivación mediante las ecuaciones de Lagrange}
+
+El sistema posee un único grado de libertad, de modo que la coordenada generalizada se define como
+\begin{equation}
+  q(t)=y(t).
+\end{equation}
+La masa equivalente se traslada verticalmente con velocidad $\dot y(t)$, por lo que su energía cinética es
+\begin{equation}
+  T=\frac{1}{2}m\dot y^{,2}.
+  \label{eq:cinetica}
+\end{equation}
+La deformación dinámica del resorte se mide desde el equilibrio y su energía potencial elástica corresponde a
+\begin{equation}
+  V=\frac{1}{2}ky^2.
+  \label{eq:potencial}
+\end{equation}
+No se incluye un término gravitacional independiente porque la coordenada se ha definido respecto al equilibrio estático. Incluir únicamente $mgy$, sin incorporar las demás fuerzas constantes que lo compensan, haría que $y=0$ dejara de representar un equilibrio.
+
+El lagrangiano se obtiene como la diferencia entre las energías cinética y potencial:
+\begin{equation}
+  L=T-V=\frac{1}{2}m\dot y^{,2}-\frac{1}{2}ky^2.
+  \label{eq:lagrangiano}
+\end{equation}
+
+El amortiguador no almacena energía potencial; disipa energía mediante una fuerza opuesta a la velocidad. Para un amortiguador viscoso lineal se emplea la función de disipación de Rayleigh
+\begin{equation}
+  \mathcal{D}=\frac{1}{2}\beta\dot y^{,2}.
+  \label{eq:rayleigh}
+\end{equation}
+Como la fuerza perturbadora actúa en el mismo sentido positivo de la coordenada, la fuerza generalizada es $Q_y=f(t)$. Esto también se obtiene del trabajo virtual $\delta W=f(t)\,\delta y$.
+
+La ecuación de Lagrange con disipación es
+\begin{equation}
+  \frac{\mathrm{d}}{\mathrm{d}t}
+  \left(\frac{\partial L}{\partial \dot y}\right)
+  -\frac{\partial L}{\partial y}
+  +\frac{\partial\mathcal{D}}{\partial\dot y}
+  =Q_y.
+  \label{eq:lagrange}
+\end{equation}
+Las derivadas necesarias son
+\begin{align}
+  \frac{\partial L}{\partial\dot y} &= m\dot y,
+  &\frac{\mathrm{d}}{\mathrm{d}t}
+  \left(\frac{\partial L}{\partial\dot y}\right) &= m\ddot y,\\
+  \frac{\partial L}{\partial y} &= -ky,
+  &\frac{\partial\mathcal D}{\partial\dot y} &= \beta\dot y.
+\end{align}
+Al sustituirlas en \eqref{eq:lagrange} se obtiene
+\begin{equation}
+  \boxed{m\ddot y(t)+\beta\dot y(t)+ky(t)=f(t)}.
+  \label{eq:movimiento}
+\end{equation}
+La fuerza restauradora del resorte puede reconocerse al despejar la aceleración: aparece como $-ky$, mientras que la fuerza del amortiguador aparece como $-\beta\dot y$. Ambas se oponen, respectivamente, al desplazamiento y a la velocidad.
+

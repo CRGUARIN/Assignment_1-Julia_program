@@ -1,0 +1,27 @@
+\section{Caracterización dinámica y parámetros}
+
+El comportamiento libre está gobernado por la ecuación característica
+\begin{equation}
+  ms^2+\beta s+k=0,
+\end{equation}
+cuyas raíces son
+\begin{equation}
+  s_{1,2}=\frac{-\beta\pm\sqrt{\beta^2-4mk}}{2m}.
+  \label{eq:polos}
+\end{equation}
+Según el valor de $\beta^2-4mk$, el sistema será subamortiguado, críticamente amortiguado o sobreamortiguado. En términos de $\zeta$, estos regímenes corresponden a $0<\zeta<1$, $\zeta=1$ y $\zeta>1$, respectivamente. Si $m>0$, $\beta>0$ y $k>0$, los polos presentan parte real negativa y el equilibrio es asintóticamente estable.
+
+Para el caso subamortiguado se define la frecuencia natural amortiguada
+\begin{equation}
+  \omega_d=\omega_n\sqrt{1-\zeta^2}.
+\end{equation}
+La respuesta natural tendrá entonces la forma general
+\begin{equation}
+  y_n(t)=e^{-\zeta\omega_nt}
+  \left[A\cos(\omega_dt)+B\sin(\omega_dt)\right],
+  \label{eq:respuesta_natural}
+\end{equation}
+donde $A$ y $B$ se determinan a partir de las condiciones iniciales.
+
+\draftnote{Seleccionar y justificar los valores de $m$, $k$ y $\beta$; calcular $\omega_n$, $\zeta$, $\omega_d$ y los polos; completar una tabla con símbolo, valor, unidad, fuente y criterio físico.}
+

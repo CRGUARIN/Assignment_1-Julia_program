@@ -1,0 +1,25 @@
+\section{Metodología de simulación y evaluación}
+
+La evaluación se dividirá en dos casos. La respuesta natural caracterizará el comportamiento intrínseco del sistema sin excitación externa,
+\begin{equation}
+  f(t)=0, \qquad y(0)=y_0\neq0, \qquad \dot y(0)=0.
+\end{equation}
+Aunque esta condición representa una rueda desplazada y liberada, su inclusión permite observar directamente el decaimiento asociado al amortiguamiento.
+
+La respuesta forzada constituirá el escenario principal de la analogía vehicular. El sistema comenzará en equilibrio y reposo,
+\begin{equation}
+  y(0)=0, \qquad \dot y(0)=0,
+\end{equation}
+y recibirá una fuerza perturbadora conocida que represente una irregularidad del terreno. Una entrada candidata es un pulso suave de media onda senoidal,
+\begin{equation}
+  f(t)=
+  \begin{cases}
+    F_0\sin\left(\dfrac{\pi t}{T_p}\right), & 0\leq t\leq T_p,\\[5pt]
+    0, & t>T_p,
+  \end{cases}
+  \label{eq:pulso}
+\end{equation}
+donde $F_0$ es la fuerza máxima y $T_p$ su duración. La selección definitiva de la entrada deberá conservarse de manera idéntica en la formulación matemática, el programa y las figuras.
+
+\draftnote{Documentar los paquetes de Julia, el método de simulación, el intervalo temporal, las tolerancias y el procedimiento reproducible para generar y guardar las figuras.}
+

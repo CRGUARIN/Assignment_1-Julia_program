@@ -1,0 +1,103 @@
+\documentclass[conference]{IEEEtran}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{cite}
+\usepackage{flushend}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{babel,decorations.pathmorphing}
+\usepackage[hidelinks]{hyperref}
+
+\sisetup{per-mode=symbol}
+\renewcommand{\IEEEkeywordsname}{Palabras clave}
+
+\definecolor{draftgray}{RGB}{244,246,249}
+\definecolor{draftblue}{RGB}{31,77,120}
+
+\newcommand{\draftnote}[1]{%
+  \par\smallskip
+  \noindent\colorbox{draftgray}{%
+    \parbox{\dimexpr\columnwidth-2\fboxsep\relax}{%
+      \footnotesize\color{draftblue}\textbf{Pendiente de completar:} #1}}
+  \par\smallskip
+}
+
+\lstdefinelanguage{Julia}{
+  morekeywords={abstract,type,immutable,bitstype,typealias,function,end,quote,
+  if,else,elseif,while,for,begin,let,do,try,catch,finally,return,break,
+  continue,macro,ccall,local,global,const,struct,mutable,where,module,using,
+  import,export,primitive},
+  sensitive=true,
+  morecomment=[l]{\#},
+  morestring=[b]",
+  morestring=[m]'
+}
+
+\lstset{
+  language=Julia,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{blue!60!black}\bfseries,
+  commentstyle=\color{green!40!black},
+  stringstyle=\color{red!55!black},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  stepnumber=1,
+  numbersep=6pt,
+  frame=single,
+  breaklines=true,
+  columns=fullflexible,
+  showstringspaces=false,
+  tabsize=2
+}
+
+\title{Modelado y simulación de un sistema\\masa--resorte--amortiguador aplicado a una rueda}
+
+\author{
+  \IEEEauthorblockN{Maria José Álvarez Hernández \qquad Cristian Alejandro Guarin Marin}
+  \IEEEauthorblockA{
+    Matemáticas Especiales\\
+    Universidad de Antioquia\\
+    Medellín, Colombia}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Este trabajo formula un modelo lineal de un grado de libertad para representar el movimiento vertical de la masa equivalente asociada a una rueda conectada a un chasis fijo mediante un resorte y un amortiguador viscoso. La ecuación de movimiento se obtiene mediante el formalismo de Lagrange con disipación de Rayleigh y se expresa posteriormente como una función de transferencia entre una fuerza perturbadora del terreno y el desplazamiento respecto al equilibrio estático. A partir de la forma estándar de segundo orden se identifican la frecuencia natural y la razón de amortiguamiento. El modelo servirá como base para evaluar en Julia sus respuestas natural y forzada.
+\end{abstract}
+
+\begin{IEEEkeywords}
+sistema masa--resorte--amortiguador, ecuaciones de Lagrange, función de transferencia, respuesta dinámica, Julia.
+\end{IEEEkeywords}
+
+\draftnote{Reemplazar los nombres de las integrantes y actualizar el resumen cuando existan parámetros, resultados numéricos y conclusiones definitivas.}
+
+\input{sections/01_introduccion}
+\input{sections/02_modelo}
+\input{sections/03_lagrange}
+\input{sections/04_transferencia}
+\input{sections/05_caracterizacion}
+\input{sections/06_metodologia}
+\newpage
+\input{sections/07_resultados}
+\input{sections/08_conclusiones}
+
+\appendices
+\input{sections/09_codigo}
+
+% Activar cuando se incorporen fuentes bibliográficas:
+% \bibliographystyle{IEEEtran}
+% \bibliography{references}
+
+\end{document}

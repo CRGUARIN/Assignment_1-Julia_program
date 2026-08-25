@@ -1,0 +1,47 @@
+\section{Función de transferencia}
+
+Se define $f(t)$ como la entrada y $y(t)$ como la salida. Para obtener la función de transferencia se aplica la transformada de Laplace a \eqref{eq:movimiento} bajo condiciones iniciales nulas,
+\begin{equation}
+  y(0)=0, \qquad \dot y(0)=0.
+\end{equation}
+En consecuencia,
+\begin{equation}
+  ms^2Y(s)+\beta sY(s)+kY(s)=F(s).
+\end{equation}
+Factorizando $Y(s)$ resulta
+\begin{equation}
+  Y(s)\left(ms^2+\beta s+k\right)=F(s),
+\end{equation}
+y la función de transferencia entre la fuerza perturbadora y el desplazamiento es
+\begin{equation}
+  \boxed{G(s)=\frac{Y(s)}{F(s)}
+  =\frac{1}{ms^2+\beta s+k}}.
+  \label{eq:transferencia}
+\end{equation}
+
+Para reconocer la estructura estándar de segundo orden se divide la ecuación de movimiento entre $m$:
+\begin{equation}
+  \ddot y+\frac{\beta}{m}\dot y+\frac{k}{m}y
+  =\frac{1}{m}f(t).
+  \label{eq:normalizada}
+\end{equation}
+Al comparar su lado izquierdo con
+\begin{equation}
+  \ddot y+2\zeta\omega_n\dot y+\omega_n^2y,
+\end{equation}
+se identifican
+\begin{equation}
+  \boxed{\omega_n=\sqrt{\frac{k}{m}}},
+  \qquad
+  \boxed{\zeta=\frac{\beta}{2\sqrt{mk}}}.
+  \label{eq:parametros_dinamicos}
+\end{equation}
+Por tanto, \eqref{eq:transferencia} también puede escribirse como
+\begin{equation}
+  G(s)=
+  \frac{\dfrac{1}{k}\omega_n^2}
+  {s^2+2\zeta\omega_ns+\omega_n^2}.
+  \label{eq:transferencia_estandar}
+\end{equation}
+Esta forma muestra que la ganancia estática es $G(0)=1/k$ y que el denominador determina la frecuencia y el amortiguamiento de la respuesta transitoria.
+

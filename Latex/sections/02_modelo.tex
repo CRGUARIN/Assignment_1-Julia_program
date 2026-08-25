@@ -1,0 +1,35 @@
+\section{Descripción y convenciones del modelo}
+
+La Fig.~\ref{fig:sistema} muestra el esquema adoptado. La coordenada generalizada $y(t)$ describe el desplazamiento vertical de la masa equivalente respecto a su posición de equilibrio estático y se considera positiva hacia arriba. Los extremos superiores del resorte y del amortiguador se conectan a un chasis fijo; sus extremos inferiores actúan sobre el eje asociado a la masa equivalente.
+
+\begin{figure}[t]
+  \centering
+  \input{figures/sistema_rueda}
+  \caption{Modelo simplificado de la rueda con resorte, amortiguador y fuerza perturbadora del terreno.}
+  \label{fig:sistema}
+\end{figure}
+
+La entrada $f(t)$ no representa la fuerza normal total, sino su variación respecto al valor estático. Si $N(t)$ es la fuerza normal total y $N_0$ su valor de equilibrio, entonces
+\begin{equation}
+  N(t)=N_0+f(t).
+\end{equation}
+En el equilibrio, la fuerza normal estática compensa el peso de la masa equivalente y la carga estática transmitida por la suspensión. Por ello, al medir $y(t)$ desde dicha posición, las contribuciones constantes se cancelan y no aparecen en la ecuación dinámica incremental.
+
+\begin{table}[t]
+  \caption{Variables y parámetros del modelo}
+  \label{tab:simbolos}
+  \centering
+  \begin{tabular}{@{}cll@{}}
+    \toprule
+    Símbolo & Descripción & Unidad \\
+    \midrule
+    $m$ & Masa equivalente de la rueda & \si{\kilogram} \\
+    $k$ & Rigidez equivalente del resorte & \si{\newton\per\meter} \\
+    $\beta$ & Coeficiente de amortiguamiento & \si{\newton\second\per\meter} \\
+    $y(t)$ & Desplazamiento desde el equilibrio & \si{\meter} \\
+    $f(t)$ & Fuerza perturbadora del terreno & \si{\newton} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+El desarrollo supone movimiento exclusivamente vertical, parámetros constantes, comportamiento lineal del resorte y amortiguamiento viscoso lineal. También se desprecia la masa propia del resorte y del amortiguador.
